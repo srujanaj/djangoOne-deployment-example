@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+{% extends "UserAPP/base.html" %}
+{% load my_extras %}
+  {% block body_block %}
+      <div class="jumbotron">
+       <h1>Welcome to the Home Page </h1>
+       <a href="{% url 'userapp:users' %}">Please go to /users to get the list of users !</a>
+       <br/><a href="{% url 'userapp:signup' %}">Please go to /signup to register! </a>
+       <br/><a href="{% url 'admin:index' %}">Link to Admin</a>
+       <br/><a href="{% url 'index' %}">Home Page</a>
+      <br/> {{text|cutout:'world'}}
+      <br/> {{number|add:"99"}}
+  {% endblock %}

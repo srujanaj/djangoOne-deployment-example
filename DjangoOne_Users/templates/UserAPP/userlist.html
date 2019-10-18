@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% extends "UserAPP/base.html" %}
+  {% block body_block %}
+    <h2> List of users!</h2>
+    <div class="container">
+      {% if list %}
+
+      <table>
+        <thead>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Email</th>
+        </thead>
+
+        {% for acc in list %}
+
+        <tr>
+          <td>{{acc.FirstName}}</td>
+          <td>{{acc.LastName}}</td>
+          <td>{{acc.Email}}</td>
+        </tr>
+
+        {% endfor %}
+
+      </table>
+
+      {% else %}
+      <p>No Users Found !</p>
+      {% endif %}
+
+    </div>
+  {% endblock %}
